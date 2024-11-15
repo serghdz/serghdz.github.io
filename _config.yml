@@ -14,7 +14,7 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: ChekoBytes# the main title
+title: ChekoBytes # the main title
 
 tagline: A Blogsite for IT related projects # it will display as the subtitle
 
