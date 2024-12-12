@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogPost from '../../components/BlogPost.astro';
+import CategoryList from '../../components/CategoryList.astro';
+import { categories } from '../../data/categories';
+import { recentPosts } from '../../data/posts';
+---
+
+<Layout title="Blog Posts - HomeLab Blog">
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <aside class="lg:col-span-1">
+      <CategoryList categories={categories} />
+    </aside>
+
+    <div class="lg:col-span-3">
+      <h1 class="text-3xl font-bold text-slate-900 mb-8">All Posts</h1>
+      <div class="grid gap-6">
+        {
+          recentPosts.map((post) => (
+            <BlogPost
+              title={post.title}
+              description={post.description}
+              date={post.date}
+              category={post.category}
+              href={post.href}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

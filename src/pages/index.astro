@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PostGrid from '../components/PostGrid.astro';
+import { recentPosts } from '../data/posts';
+import { sortPostsByDate } from '../utils/date';
+
+const sortedPosts = sortPostsByDate(recentPosts).slice(0, 6);
+---
+
+<Layout title="HomeLab Blog - IT & Security">
+  <section class="mb-12">
+    <h1 class="text-4xl font-bold text-slate-900 mb-6">Welcome to HomeLab Blog</h1>
+    <p class="text-xl text-slate-600">
+      Exploring IT, networking, and cybersecurity through hands-on home lab projects.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-2xl font-bold text-slate-900 mb-6">Recent Posts</h2>
+    <PostGrid posts={sortedPosts} />
+  </section>
+</Layout>
